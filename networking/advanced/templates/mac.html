@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>mac</title>
+    <link
+            href="../static/styles/macDataStyle.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div style="overflow-x:auto;">
+    <table>
+        <tr>
+            <td class="table_data">VLAN</td>
+            {% for item in vlan %}
+            <td class="table_data">{{ item }}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <td class="table_data">MAC Address</td>
+            {% for item in mac_address %}
+            <td class="table_data">{{ item }}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <td class="table_data">age</td>
+            {% for item in age %}
+            <td class="table_data">{{ item }}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <td class="table_data">Secure</td>
+            {% for item in secure %}
+            <td class="table_data">{{ item }}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <td class="table_data">NTFY</td>
+            {% for item in ntfy %}
+            <td class="table_data">{{ item }}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <td class="table_data">PORTS</td>
+            {% for item in ports %}
+            <td class="table_data">{{ item }}</td>
+            {%endfor%}
+        </tr>
+    </table>
+</div>
+</body>
+<footer>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                               result="highContrastGraphic"/>
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <button id="gooey-button" onclick="history.back()" style="float: right; margin-left: -50%;">
+        Back
+        <span class="bubbles">
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+	</span>
+    </button>
+</footer>
+</html>

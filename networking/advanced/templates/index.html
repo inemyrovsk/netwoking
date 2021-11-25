@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body style="overflow: hidden">
+<div class="row">
+    <div class="column left"
+         style="background-color:darkblue; float: left; padding: 10px; height: 100vh;   width: 25%; margin: 0;">
+    </div>
+    <div class="column middle"
+         style="background-color:lightblue; float: left; padding: 10px; height: 100vh; width: 50%; margin: 0;">
+        <h1 style="display: flex; justify-content: center; align-items: center;">Connect to Cisco Lab</h1>
+        <form action="/conf" method="post">
+            <div class="div" style="margin-top: 100px; display: flex; justify-content: center; align-items: center;">
+                <input type="text" id="url" name="url" value="https://10.10.20.161">
+            </div>
+            <div class="div" style="margin-top: 40px; display: flex; justify-content: center; align-items: center;">
+                <input type="text" id="username" name="username" value="developer">
+            </div>
+            <!--            <div class="div" style="margin-top: 40px; display: flex; justify-content: center; align-items: center;">-->
+            <!--                <input type="text" id="password" name="password" value="C1sco12345">-->
+            <!--            </div>-->
+            <!--            -->
+            <div class="password">
+                <input type="password" id="password-input" placeholder="Enter password" name="password"
+                       value="C1sco12345">
+                <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+            </div>
+            <style type="text/css">
+                .password {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 40px;
+                    position: relative;
+                }
+
+                #password-input {
+                    height: 30px;
+                    line-height: 40px;
+                    text-indent: 10px;
+                    margin: 0 0 15px 0;
+                    border-radius: 3px;
+                    border: 1px solid #999;
+                    font-size: 18px;
+                }
+
+                .password-control {
+                    position: absolute;
+                    top: 5px;
+                    right: 210px;
+                    width: 20px;
+                    height: 20px;
+                    background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+                }
+
+                .password-control.view {
+                    background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
+                }
+            </style>
+            <script>
+                function show_hide_password(target) {
+                    var input = document.getElementById('password-input');
+                    if (input.getAttribute('type') == 'password') {
+                        target.classList.add('view');
+                        input.setAttribute('type', 'text');
+                    } else {
+                        target.classList.remove('view');
+                        input.setAttribute('type', 'password');
+                    }
+                    return false;
+                }
+            </script>
+            <div style="margin-top: 20px; display: flex; justify-content: center; align-items: center ;">
+                <button type="submit" style="font-size: 24px; ">Connect</button>
+            </div>
+        </form>
+    </div>
+    <div class="column right"
+         style="background-color:darkblue;  width: 25%; float: left; padding: 10px; height: 100vh; margin: 0;">
+    </div>
+</div>
+
+<!--<script>-->
+<!--    $(function(){-->
+<!--    $('button').click(function(){-->
+<!--        var user = $('#inputUsername').val();-->
+<!--        var pass = $('#inputPassword').val();-->
+<!--        $.ajax({-->
+<!--            url: '/signUpUser',-->
+<!--            data: $('form').serialize(),-->
+<!--            type: 'POST',-->
+<!--            success: function(response){-->
+<!--                console.log(response);-->
+<!--            },-->
+<!--            error: function(error){-->
+<!--                console.log(error);-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+<!--});-->
+<!--</script>-->
+</body>
+

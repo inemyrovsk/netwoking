@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>device info</title>
+
+    <link
+            href="../static/styles/macDataStyle.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div class="sw">
+    <table class="sw_table">
+        <tr>
+            <td class="table-heading">Device name</td>
+            <td class="table-heading">Serial Number</td>
+            <td class="table-heading">Software Version</td>
+            <td class="table-heading">CPU</td>
+            <td class="table-heading">Memory</td>
+        </tr>
+        <tr>
+            <td class="table_data">{{ sw_device_name }}</td>
+            <td class="table_data">{{ serial_info }}</td>
+            <td class="table_data">{{ version_info }}</td>
+            <td class="table_data">{{ cpu_info }}</td>
+            <td class="table_data">{{ memory_info }}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="rtr" style="margin-top: 50px">
+    <table class="rtr_table">
+        <tr>
+            <td class="table-heading">Device name</td>
+            <td class="table-heading">Software Version</td>
+            <td class="table-heading">Uptime</td>
+            <td class="table-heading" colspan="2">CPU</td>
+            <td class="table-heading">Memory</td>
+        </tr>
+        <tr>
+            <td class="table_data">{{ rtr_device_name }}</td>
+            <td class="table_data">{{ software_version }}</td>
+            <td class="table_data">{{ uptime }}</td>
+            <td class="table_data">{{ processor_info }}</td>
+            <td class="table_data">ID: {{ processor_id }}</td>
+            <td class="table_data">{{ memory_mb }}</td>
+        </tr>
+    </table>
+</div>
+</body>
+<footer>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                               result="highContrastGraphic"/>
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <button id="gooey-button" onclick="history.back()" style="float: right; margin-left: -50%;">
+        Back
+        <span class="bubbles">
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+		<span class="bubble"></span>
+	</span>
+    </button>
+</footer>
+</html>
