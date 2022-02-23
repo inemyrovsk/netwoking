@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import netmiko
-from basic.gather import *
-from basic.interfaces import conf_int
+from networking.basic.gather import *
+from networking.basic.interfaces import conf_int
 
 devices = [
     {
