@@ -1,2 +1,2 @@
 # netwoking
-cisco labs
+cisco modeling labs
